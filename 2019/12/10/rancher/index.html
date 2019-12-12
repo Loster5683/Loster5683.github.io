@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8" />
+
+    
+
+    
+
+    <title>Rancher平台搭建流程 | Loster5683&#39; Blog</title>
+    <meta name="author" content="Loster" />
+    <meta name="keywords" content="" />
+    <meta name="description" content="1.Rancher简介Rancher 是一套容器管理平台，它可以帮助组织在生产环境中轻松快捷的部署和管理容器。Rancher可以轻松地管理各种环境的 Kubernetes，满足IT需求并为 DevOps 团队提供支持。Rancher 用户可以选择使用 Rancher Kubernetes Engine(RKE) 创建 K8s 集群，也可以使用 GKE，AKS 和 EKS 等云K8s 服务。Rancher 用户还可以导入和管理现有的 Kubernetes 集群。同时 Rancher UI ..." />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no" />
+
+    
+    <link rel="alternate" href="/atom.xml" title="Loster5683&#39; Blog" type="application/atom+xml">
+    
+    
+    <link rel="icon" href="/images/avatar.ico">
+    
+
+    <style type="text/css">
+    @font-face {
+        font-family: 'icomoon';
+        src: url("/fonts/icomoon.eot?q628ml");
+        src: url("/fonts/icomoon.eot?q628ml#iefix") format('embedded-opentype'),
+             url("/fonts/icomoon.ttf?q628ml") format('truetype'),
+             url("/fonts/icomoon.woff?q628ml") format('woff'),
+             url("/fonts/icomoon.svg?q628ml#icomoon") format('svg');
+        font-weight: normal;
+        font-style: normal;
+    }
+    </style>
+    <link rel="stylesheet" href="/css/style.css">
+
+    <!--[if lt IE 9]>
+    <style type="text/css">
+    .nav-inner {top:0;}
+    .author-meta {position:static;top:0;}
+    .search-form {height:36px;}
+    </style>
+    <script type="text/javascript" src="https://unpkg.com/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+
+    <main class="app">
+        <header id="header" class="header clearfix">
+    <div id="nav" class="nav">
+    <div class="nav-mobile">
+        <button id="open-panel" class="open-panel nav-mobile-item"><i class="icon-documents"></i></button>
+        <h1 class="nav-mobile-title nav-mobile-item">Loster5683&#39; Blog</h1>
+        <button id="open-menus" class="open-panel nav-mobile-item"><i class="icon-library"></i></button>
+    </div>
+
+    <nav id="nav-inner" class="nav-inner">
+        
+            <a class="nav-item" href="/">
+                <span class="nav-text">首页</span>
+            </a>
+        
+            <a class="nav-item" href="/categories/frontEnd">
+                <span class="nav-text">前端</span>
+            </a>
+        
+            <a class="nav-item" href="/categories/backEnd">
+                <span class="nav-text">后端</span>
+            </a>
+        
+            <a class="nav-item" href="/tags">
+                <span class="nav-text">标签</span>
+            </a>
+        
+            <a class="nav-item" href="/archives">
+                <span class="nav-text">归档</span>
+            </a>
+        
+            <a class="nav-item" href="/atom.xml">
+                <span class="nav-text">订阅</span>
+            </a>
+        
+            <a class="nav-item" href="/about">
+                <span class="nav-text">关于</span>
+            </a>
+        
+    </nav>
+</div>
+
+    <aside id="aside" class="aside">
+    <div id="aside-mask" class="aside-mask"></div>
+    <div id="aside-inner" class="aside-inner">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit"><i class="icon-search-stroke"></i></button><input type="hidden" name="sitesearch" value="https://loster5683.github.io"></form>
+
+        
+        
+        
+        
+
+        
+        <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-Rancher简介"><span class="toc-number">1.</span> <span class="toc-text">1.Rancher简介</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-Rancher搭建"><span class="toc-number">2.</span> <span class="toc-text">2.Rancher搭建</span></a></li></ol>
+        
+    </div>
+</aside>
+
+</header>
+
+        <div id="content" class="content">
+            <div id="wrapper" class="wrapper">
+                <article class="article" itemscope itemprop="blogPost">
+    
+    <header class="article-header">
+        
+        <h1 itemprop="name">
+            Rancher平台搭建流程
+        </h1>
+        
+        <div class="article-meta clearfix">
+            <a class="article-date" href="https://loster5683.github.io/2019/12/10/rancher/index.html">
+    
+    <i class="icon-calendar"></i>
+    
+    <time datetime="2019-12-10T09:31:35.000Z" itemprop="datePublished">2019-12-10</time>
+</a>
+
+            
+<div class="article-tag-list">
+    <i class="icon-tag"></i>
+    <a class="article-tag-link" href="/tags/DevOps/" rel="tag">DevOps</a>, <a class="article-tag-link" href="/tags/k8s/" rel="tag">k8s</a>, <a class="article-tag-link" href="/tags/rancher/" rel="tag">rancher</a>
+</div>
+
+
+        </div>
+    </header>
+    
+    <section class="article-body markdown-body">
+        
+        <h4 id="1-Rancher简介"><a href="#1-Rancher简介" class="headerlink" title="1.Rancher简介"></a>1.Rancher简介</h4><p>Rancher 是一套容器管理平台，它可以帮助组织在生产环境中轻松快捷的部署和管理容器。Rancher可以轻松地管理各种环境的 Kubernetes，满足IT需求并为 DevOps 团队提供支持。</p>
+<p>Rancher 用户可以选择使用 Rancher Kubernetes Engine(RKE) 创建 K8s 集群，也可以使用 GKE，AKS 和 EKS 等云K8s 服务。Rancher 用户还可以导入和管理现有的 Kubernetes 集群。同时 Rancher UI 为 DevOps 工程师提供了一个直观的用户界面来管理他们的服务容器。</p>
+<a id="more"></a>
+
+<h4 id="2-Rancher搭建"><a href="#2-Rancher搭建" class="headerlink" title="2.Rancher搭建"></a>2.Rancher搭建</h4><p>通过docker安装rancher2.x</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">1.拉取镜像</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">docker pull rancher&#x2F;rancher</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">2.后台运行 </span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">docker run -d --restart&#x3D;unless-stopped -p 80:80 -p 443:443 --name rancher rancher&#x2F;rancher</span></pre></td></tr></table></figure>
+
+<p>访问rancher的web界面   <a href="https://172.16.1.122/" target="_blank" rel="noopener">https://172.16.1.122</a>  (安装机器的ip地址) 设置初始admin密码</p>
+<img src="/2019/12/10/rancher/1565426533497.png" class=""> 
+
+<p>设置Rancher Server URL, 这个地址需要保证集群中的所有节点都需要能够访问</p>
+<img src="/2019/12/10/rancher/1565426645114.png" class=""> 
+
+<p>进入主界面，右下方可选择操作界面语言</p>
+<img src="/2019/12/10/rancher/1565426711405.png" class=""> 
+
+<p>点击创建集群进入添加集群界面</p>
+<img src="/2019/12/10/rancher/1565427722638.png" class=""> 
+
+<p>选择集群类型为添加主机自建Kubernetes集群，进入自定义主机运行界面</p>
+<img src="/2019/12/10/rancher/1565427902465.png" class=""> 
+
+<p>一台主机可以对应多个角色,每个集群至少需要一个Etcd角色、一个Control角色、一个Worker角色</p>
+<p>这里我们选择一台机器勾选角色，其余只勾选worker角色，勾选后复制下方的命令再对应的主机上执行。</p>
+<p>注册成功后下方会提示主机注册成功，这里再我们注册一个worker角色的主机，IP为172.16.1.121</p>
+<img src="/2019/12/10/rancher/1565432470330.png" class=""> 
+
+<p>集群添加完成后我们可以看到集群相关的信息，点击集群选择default项目进入服务界面</p>
+<img src="/2019/12/10/rancher/1565432635767.png" class=""> 
+
+<p>点击部署服务，进入配置界面，必须设置的选项有容器名称，镜像地址和端口映射，这里的docker镜像默认从dockerhub获取，如果需要从私有镜像仓库获取，需要配置私有仓库地址，端口映射左边是容器默认启动的端口，右边是映射的端口，tomcat默认端口为8080，下面的环境变量，数据卷，健康检查等不是必须配置的，后面再介绍。配置完成后点击下方的启动按钮启动容器。</p>
+<img src="/2019/12/10/rancher/1565433040953.png" class=""> 
+
+<p>部署完成我们可以看到服务处于启动状态，随机映射的端口为32073</p>
+<img src="/2019/12/10/rancher/1565433520907.png" class=""> 
+
+<p>访问地址    <a href="http://172.16.1.121:32073/" target="_blank" rel="noopener">http://172.16.1.121:32073/</a>  我们可以看到容器成功运行</p>
+<img src="/2019/12/10/rancher/1565433572581.png" class=""> 
+        
+    </section>
+</article>
+
+
+
+<a id="pagenext" href="/2019/12/09/hexo/" class="article-next" title="Hexo标签插件与资源文件夹"><i class="icon-arrow-right"></i></a>
+
+
+
+
+<div class="comments">
+    <div id="comments"></div>
+    <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+    <script>
+    new Gitalk({
+        clientID: "add20f898442663816a4",
+        clientSecret: "832ee656274a6d02f70524a5027c6e4e648bb0d9",
+        repo: "loster5683.github.io",
+        owner: "loster5683",
+        admin: ["loster5683"],
+        id: "2019/12/10/rancher",
+        distractionFreeMode: true,
+        title: "Rancher平台搭建流程",
+        body: "https://loster5683.github.io/2019/12/10/rancher/",
+        labels: ["k8s","rancher","DevOps"]
+    }).render('comments');
+    </script>
+</div>
+
+
+            </div>
+        </div>
+        <footer class="footer">
+    Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>, Theme by <a href="https://github.com/sanonz/hexo-theme-concise" target="_blank">Concise</a>
+
+    
+    <script>
+        var _hmt = _hmt || [];
+        (function () {
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?f93adac2de709d011e7f231eb1c996fc";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+    
+</footer>
+
+    </main>
+
+    <script type="text/javascript" src="https://cdn.bootcss.com/jquery/1.9.0/jquery.min.js"></script>
+    <script type="text/javascript">
+    $(function() {
+        var nodes = {
+            nav: $('#nav'),
+            aside: $('#aside'),
+            asideInner: $('#aside-inner'),
+            navInner: $('#nav-inner')
+        };
+
+        var doing = false;
+        nodes.asideInner.on('webkitAnimationEnd mozAnimationEnd oAnimationEnd oanimationend animationend', function() {
+            if (nodes.aside.hasClass('mobile-open')) {
+                nodes.aside.removeClass('mobile-open');
+            } else {
+                nodes.aside.removeClass('mobile-close panel-show');
+            }
+            doing = false;
+        });
+        $('#open-panel, #aside-mask').on('click', function() {
+            if (doing) {
+                return;
+            }
+
+            if (nodes.aside.hasClass('panel-show')) {
+                nodes.aside.addClass('mobile-close');
+            } else {
+                nodes.aside.addClass('mobile-open panel-show');
+            }
+        });
+        $('#open-menus').on('click', function() {
+            nodes.navInner.slideToggle();
+        });
+
+        if (window.innerWidth <= 960) {
+            setTimeout(function() {
+                nodes.navInner.slideUp();
+            }, 3000);
+        }
+    });
+    </script>
+    
+        <script src="/js/scrollspy.min.js"></script>
+        <script type="text/javascript">
+        $(document.body).scrollspy({target: '#aside-inner'});
+
+        $(window).on('resize', function() {
+            var hw = $('#header').width();
+            var ww = $('#wrapper').width();
+            var space = ($(this).width() - hw - ww) / 2 / 2;
+
+            var pageprev = $('#pageprev');
+            var pagenext = $('#pagenext');
+            var avg = (pageprev.width() + pagenext.width()) / 2
+
+            if(space > avg) {
+                var len = space - avg / 2;
+                var styles = {position: 'fixed', top: '50%', marginTop: - (pageprev.width() + pagenext.width()) / 4}
+                pageprev.css($.extend({left: hw + len}, styles));
+                pagenext.css($.extend({right: len}, styles));
+            } else {
+                pageprev.removeAttr('style');
+                pagenext.removeAttr('style');
+            }
+        }).trigger('resize');
+        </script>
+    
+
+</body>
+</html>

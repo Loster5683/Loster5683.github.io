@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Loster5683&#39; Blog</title>
+  <icon>https://loster5683.github.io/icon.png</icon>
+  
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="https://loster5683.github.io/"/>
+  <updated>2019-12-10T09:31:35.051Z</updated>
+  <id>https://loster5683.github.io/</id>
+  
+  <author>
+    <name>Loster</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Rancher平台搭建流程</title>
+    <link href="https://loster5683.github.io/2019/12/10/rancher/"/>
+    <id>https://loster5683.github.io/2019/12/10/rancher/</id>
+    <published>2019-12-10T09:31:35.000Z</published>
+    <updated>2019-12-10T09:31:35.051Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h4 id=&quot;1-Rancher简介&quot;&gt;&lt;a href=&quot;#1-Rancher简介&quot; class=&quot;headerlink&quot; title=&quot;1.Rancher简介&quot;&gt;&lt;/a&gt;1.Rancher简介&lt;/h4&gt;&lt;p&gt;Rancher 是一套容器管理平台，它可以帮助组织在生产环境中轻松快捷的部署和管理容器。Rancher可以轻松地管理各种环境的 Kubernetes，满足IT需求并为 DevOps 团队提供支持。&lt;/p&gt;
+&lt;p&gt;Rancher 用户可以选择使用 Rancher Kubernetes Engine(RKE) 创建 K8s 集群，也可以使用 GKE，AKS 和 EKS 等云K8s 服务。Rancher 用户还可以导入和管理现有的 Kubernetes 集群。同时 Rancher UI 为 DevOps 工程师提供了一个直观的用户界面来管理他们的服务容器。&lt;/p&gt;
+    
+    </summary>
+    
+    
+    
+      <category term="k8s" scheme="https://loster5683.github.io/tags/k8s/"/>
+    
+      <category term="rancher" scheme="https://loster5683.github.io/tags/rancher/"/>
+    
+      <category term="DevOps" scheme="https://loster5683.github.io/tags/DevOps/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Hexo标签插件与资源文件夹</title>
+    <link href="https://loster5683.github.io/2019/12/09/hexo/"/>
+    <id>https://loster5683.github.io/2019/12/09/hexo/</id>
+    <published>2019-12-09T11:22:22.000Z</published>
+    <updated>2019-12-10T09:29:51.465Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;标签插件&quot;&gt;&lt;a href=&quot;#标签插件&quot; class=&quot;headerlink&quot; title=&quot;标签插件&quot;&gt;&lt;/a&gt;标签插件&lt;/h3&gt;&lt;h4 id=&quot;引用块&quot;&gt;&lt;a href=&quot;#引用块&quot; class=&quot;headerlink&quot; title=&quot;引用块&quot;&gt;&lt;/a&gt;&lt;strong&gt;引用块&lt;/strong&gt;&lt;/h4&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&amp;#123;% blockquote [author[, source]] [link] [source_link_title] %&amp;#125;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;content&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&amp;#123;% endblockquote %&amp;#125;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;p&gt;&lt;strong&gt;eg:&lt;/strong&gt;&lt;/p&gt;
+&lt;blockquote&gt;&lt;p&gt;标签插件引用块测试&lt;/p&gt;
+&lt;footer&gt;&lt;strong&gt;Loster&lt;/strong&gt;&lt;cite&gt;&lt;a href=&quot;https://loster5683.github.io/2019/12/09/hexo/&quot;&gt;Hexo标签插件与资源文件夹&lt;/a&gt;&lt;/cite&gt;&lt;/footer&gt;&lt;/blockquote&gt;
+    
+    </summary>
+    
+    
+    
+      <category term="hexo" scheme="https://loster5683.github.io/tags/hexo/"/>
+    
+      <category term="blog" scheme="https://loster5683.github.io/tags/blog/"/>
+    
+  </entry>
+  
+</feed>
