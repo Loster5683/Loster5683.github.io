@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://loster5683.github.io/"/>
-  <updated>2019-12-17T13:17:10.325Z</updated>
+  <updated>2019-12-17T13:20:11.047Z</updated>
   <id>https://loster5683.github.io/</id>
   
   <author>
@@ -21,17 +21,13 @@
     <link href="https://loster5683.github.io/2019/12/17/frp/"/>
     <id>https://loster5683.github.io/2019/12/17/frp/</id>
     <published>2019-12-17T12:24:11.000Z</published>
-    <updated>2019-12-17T13:17:10.325Z</updated>
+    <updated>2019-12-17T13:20:11.047Z</updated>
     
     <summary type="html">
     
-      
-      
-        
-        
-          &lt;h1 id=&quot;Frp内网穿透&quot;&gt;&lt;a href=&quot;#Frp内网穿透&quot; class=&quot;headerlink&quot; title=&quot;Frp内网穿透&quot;&gt;&lt;/a&gt;Frp内网穿透&lt;/h1&gt;&lt;h2 id=&quot;下载&quot;&gt;&lt;a href=&quot;#下载&quot; class=&quot;headerlink&quot;
-        
-      
+      &lt;h1 id=&quot;Frp内网穿透&quot;&gt;&lt;a href=&quot;#Frp内网穿透&quot; class=&quot;headerlink&quot; title=&quot;Frp内网穿透&quot;&gt;&lt;/a&gt;Frp内网穿透&lt;/h1&gt;&lt;h2 id=&quot;下载&quot;&gt;&lt;a href=&quot;#下载&quot; class=&quot;headerlink&quot; title=&quot;下载&quot;&gt;&lt;/a&gt;下载&lt;/h2&gt;&lt;p&gt;frp是一款非常好用的开源内网穿透工具&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://github.com/fatedier/frp&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Github地址&lt;/a&gt;&lt;br&gt;&lt;a href=&quot;https://github.com/fatedier/frp/releases&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;release地址&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;下载对应系统的release包，客户端与服务端保持版本一致&lt;/p&gt;
     
     </summary>
     
